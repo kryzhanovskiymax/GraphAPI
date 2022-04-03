@@ -129,6 +129,30 @@ graph/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/build
 .PHONY : graph/fast
 
+graph_algo/graph.o: graph_algo/graph.cpp.o
+.PHONY : graph_algo/graph.o
+
+# target to build an object file
+graph_algo/graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/graph.cpp.o
+.PHONY : graph_algo/graph.cpp.o
+
+graph_algo/graph.i: graph_algo/graph.cpp.i
+.PHONY : graph_algo/graph.i
+
+# target to preprocess a source file
+graph_algo/graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/graph.cpp.i
+.PHONY : graph_algo/graph.cpp.i
+
+graph_algo/graph.s: graph_algo/graph.cpp.s
+.PHONY : graph_algo/graph.s
+
+# target to generate assembly for a file
+graph_algo/graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/graph.cpp.s
+.PHONY : graph_algo/graph.cpp.s
+
 graph_algo/main.o: graph_algo/main.cpp.o
 .PHONY : graph_algo/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... graph"
+	@echo "... graph_algo/graph.o"
+	@echo "... graph_algo/graph.i"
+	@echo "... graph_algo/graph.s"
 	@echo "... graph_algo/main.o"
 	@echo "... graph_algo/main.i"
 	@echo "... graph_algo/main.s"
