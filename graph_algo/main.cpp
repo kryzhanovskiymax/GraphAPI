@@ -13,7 +13,7 @@ int main() {
         {1, 6}, {3, 7}, {1, 5},
         {3, 4}
     }};
-    Graph<int> graph;
+    GraphProcess<int> graph;
     graph.InitializeGraph(set_up.first, set_up.second);
     graph.FormAdjacencyList();
     //graph.ShowAdjacencyList(std::cout);

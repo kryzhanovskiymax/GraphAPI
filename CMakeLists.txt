@@ -6,6 +6,7 @@ set(SOURCES
 )
 
 set(HEADERS 
+        ./graph_algo/domain.hpp
         ./graph_algo/graph.hpp
 )
 

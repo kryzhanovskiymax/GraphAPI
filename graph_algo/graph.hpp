@@ -1,5 +1,8 @@
 #pragma once
 
+
+#include "domain.hpp"
+
 #include <vector>
 #include <deque>
 #include <utility>
@@ -15,54 +18,35 @@
 #include <queue>
 #include <algorithm>
 
-enum class Color {
-    White,
-    Gray,
-    Black
-};
-
-enum class SearchType {
-    BFS,
-    DFS
-};
-
 template <typename T>
-struct VertixWrapper {
-    T vertix;
-    int distance;
-    Color color = Color::White;
-    std::shared_ptr<VertixWrapper<T>> parent = nullptr;
-};
-
-template <typename T>
-class Graph {
+class GraphProcess {
 public:
 
-    Graph() {}
+    GraphProcess() {}
 
     void AddWeightFunction(std::function<double(std::pair<T, T>)> get_weight) {
-        get_weight_(get_weight);
+        graph_representation_.weight(get_weight);
     }
 
     void InitializeGraph(std::initializer_list<T> vertices, 
             std::initializer_list<std::pair<T, T>> edges) {
         for (const auto& v : vertices) {
-            vertices_.push_back(v);
+            graph_representation_.vertices.push_back(v);
         }
 
         for (const auto& e : edges) {
-            edges_.push_back(e);
+            graph_representation_.edges.push_back(e);
         }
     }
 
     void InitializeGraph(const std::vector<T>& vertices, 
             const std::vector<std::pair<T, T>>& edges) {
         for (const auto& v : vertices) {
-            vertices_.push_back(v);
+            graph_representation_.vertices.push_back(v);
         }
 
         for (const auto& e : edges) {
-            edges_.push_back(e);
+            graph_representation_.edges.push_back(e);
         }
     }
 
@@ -94,11 +78,11 @@ public:
 
     void FormAdjacencyList() {
 
-        for (const auto& v : vertices_) {
+        for (const auto& v : graph_representation_.vertices) {
             adjacency_list_.insert({v, {}});
         }
 
-        for (const auto& [left, right] : edges_) {
+        for (const auto& [left, right] : graph_representation_.edges) {
             if (vertices_to_wrappers.count(left) < 1) {
                 vertices_to_wrappers.insert({left, std::make_shared<VertixWrapper<T>>(VertixWrapper<T>{left, INT_MAX, Color::White, nullptr})});
             }
@@ -113,13 +97,11 @@ public:
 
         adjacency_list_formed = true;
     }
+
+    Graph<T> GenerateMST(MSTAlgorithm type = MSTAlgorithm::Kruskal);
 private:
 
-    std::deque<T> vertices_ = {};
-    std::deque<std::pair<T, T>> edges_ = {};
-    std::function<double(std::pair<T, T>)> get_weight_ = [] (std::pair<T, T> e) {
-        return 0;
-    };
+    Graph<T> graph_representation_;
 
     std::unordered_map<T, std::shared_ptr<VertixWrapper<T>>> vertices_to_wrappers;
     std::unordered_map<T, std::list<std::shared_ptr<VertixWrapper<T>>>> adjacency_list_ = {};
@@ -210,4 +192,41 @@ private:
 
         return FormPath(target);
     }
+
+    class ConnectedComponents {
+    public:
+        ConnectedComponents(const std::vector<T>& vertices) {
+            for (int i = 0; i < vertices.size(); ++i) {
+                components.push_back({vertices[i]});
+                vertice_to_component[vertices[i]] = i; 
+            }
+        }
+
+        /*LinkVertices(const T& lhs, const T& rhs) {
+            int lhs_node = vertice_to_component[lhs];
+
+        }*/
+    
+    private:
+        std::vector<std::list<T>> components;
+        std::unordered_map<T, int> vertice_to_component;
+    };
+
+    Graph<T> GenerateMSTKruskal() {
+        Graph<T> mst;
+        mst.graph = {};
+        mst.edges = {};
+
+        std::vector<std::pair<T, T>> sorted_edges{graph_representation_.edges.begin(), 
+                                                    graph_representation_.edges.end()};
+        
+        std::sort(sorted_edges.begin(), sorted_edges.end(), [&] (const auto& lhs, const auto& rhs) {
+            return graph_representation_.weight(lhs) < graph_representation_.weight(rhs);
+        });
+
+
+        return mst;
+    }
+
+    Graph<T> GenerateMSTPrim();
 };
