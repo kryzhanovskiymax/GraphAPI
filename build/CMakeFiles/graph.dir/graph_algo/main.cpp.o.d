@@ -247,4 +247,8 @@ CMakeFiles/graph.dir/graph_algo/main.cpp.o: \
   /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/connected_components.hpp \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/unordered_set \
-  /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/queue
+  /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/queue \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/graph_reader.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/json/json.hpp \
+  /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/variant \
+  /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/array

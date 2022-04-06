@@ -5,6 +5,8 @@
 #include <initializer_list>
 #include <list>
 
+namespace graph {
+
 template <typename T>
 class ConnectedComponents {
 public:
@@ -82,3 +84,5 @@ private:
     }
 
 };
+
+}

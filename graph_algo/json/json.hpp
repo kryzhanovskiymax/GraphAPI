@@ -67,11 +67,11 @@ explicit Document(Node root);
 
 const Node& GetRoot() const;
         
-bool operator== (const Document& other) const {
+bool operator==(const Document& other) const {
     return root_ == other.GetRoot();
 }
         
-bool operator!= (const Document& other) const {
+bool operator!=(const Document& other) const {
     return root_ != other.GetRoot();
 }
 

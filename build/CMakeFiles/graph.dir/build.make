@@ -83,17 +83,49 @@ CMakeFiles/graph.dir/graph_algo/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph.dir/graph_algo/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/main.cpp -o CMakeFiles/graph.dir/graph_algo/main.cpp.s
 
+CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o: CMakeFiles/graph.dir/flags.make
+CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o: ../graph_algo/svg/svg.cpp
+CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o: CMakeFiles/graph.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o -MF CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o.d -o CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o -c /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/svg/svg.cpp
+
+CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/svg/svg.cpp > CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.i
+
+CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/svg/svg.cpp -o CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.s
+
+CMakeFiles/graph.dir/graph_algo/json/json.cpp.o: CMakeFiles/graph.dir/flags.make
+CMakeFiles/graph.dir/graph_algo/json/json.cpp.o: ../graph_algo/json/json.cpp
+CMakeFiles/graph.dir/graph_algo/json/json.cpp.o: CMakeFiles/graph.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graph.dir/graph_algo/json/json.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/graph.dir/graph_algo/json/json.cpp.o -MF CMakeFiles/graph.dir/graph_algo/json/json.cpp.o.d -o CMakeFiles/graph.dir/graph_algo/json/json.cpp.o -c /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/json/json.cpp
+
+CMakeFiles/graph.dir/graph_algo/json/json.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph.dir/graph_algo/json/json.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/json/json.cpp > CMakeFiles/graph.dir/graph_algo/json/json.cpp.i
+
+CMakeFiles/graph.dir/graph_algo/json/json.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph.dir/graph_algo/json/json.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/json/json.cpp -o CMakeFiles/graph.dir/graph_algo/json/json.cpp.s
+
 # Object files for target graph
 graph_OBJECTS = \
-"CMakeFiles/graph.dir/graph_algo/main.cpp.o"
+"CMakeFiles/graph.dir/graph_algo/main.cpp.o" \
+"CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o" \
+"CMakeFiles/graph.dir/graph_algo/json/json.cpp.o"
 
 # External object files for target graph
 graph_EXTERNAL_OBJECTS =
 
 graph: CMakeFiles/graph.dir/graph_algo/main.cpp.o
+graph: CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o
+graph: CMakeFiles/graph.dir/graph_algo/json/json.cpp.o
 graph: CMakeFiles/graph.dir/build.make
 graph: CMakeFiles/graph.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable graph"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

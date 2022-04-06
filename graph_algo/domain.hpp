@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <map>
 
+namespace graph {
+
 enum class Color {
     White,
     Gray,
@@ -40,3 +42,4 @@ struct VertixWrapper {
     std::shared_ptr<VertixWrapper<T>> parent = nullptr;
 };
 
+}

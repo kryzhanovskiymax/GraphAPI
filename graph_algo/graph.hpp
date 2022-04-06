@@ -19,7 +19,7 @@
 #include <queue>
 #include <algorithm>
 
-
+namespace graph {
 
 template <typename T>
 std::ostream& operator<<(std::ostream& os, std::pair<T, T> edge) {
@@ -46,6 +46,13 @@ class GraphProcess {
 public:
 
     GraphProcess() {}
+    GraphProcess(const Graph<T>& graph) {
+        graph_representation_ = graph;
+    } 
+
+    GraphProcess(Graph<T>&& graph) {
+        graph_representation_ = graph;
+    } 
 
     void AddWeightFunction(std::function<double(std::pair<T, T>)> get_weight) {
         graph_representation_.weight = get_weight;
@@ -267,3 +274,5 @@ private:
 
     //Graph<T> GenerateMSTPrim();
 };
+
+}

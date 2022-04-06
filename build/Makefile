@@ -129,6 +129,30 @@ graph/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/build
 .PHONY : graph/fast
 
+graph_algo/json/json.o: graph_algo/json/json.cpp.o
+.PHONY : graph_algo/json/json.o
+
+# target to build an object file
+graph_algo/json/json.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/json/json.cpp.o
+.PHONY : graph_algo/json/json.cpp.o
+
+graph_algo/json/json.i: graph_algo/json/json.cpp.i
+.PHONY : graph_algo/json/json.i
+
+# target to preprocess a source file
+graph_algo/json/json.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/json/json.cpp.i
+.PHONY : graph_algo/json/json.cpp.i
+
+graph_algo/json/json.s: graph_algo/json/json.cpp.s
+.PHONY : graph_algo/json/json.s
+
+# target to generate assembly for a file
+graph_algo/json/json.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/json/json.cpp.s
+.PHONY : graph_algo/json/json.cpp.s
+
 graph_algo/main.o: graph_algo/main.cpp.o
 .PHONY : graph_algo/main.o
 
@@ -153,6 +177,30 @@ graph_algo/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/main.cpp.s
 .PHONY : graph_algo/main.cpp.s
 
+graph_algo/svg/svg.o: graph_algo/svg/svg.cpp.o
+.PHONY : graph_algo/svg/svg.o
+
+# target to build an object file
+graph_algo/svg/svg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.o
+.PHONY : graph_algo/svg/svg.cpp.o
+
+graph_algo/svg/svg.i: graph_algo/svg/svg.cpp.i
+.PHONY : graph_algo/svg/svg.i
+
+# target to preprocess a source file
+graph_algo/svg/svg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.i
+.PHONY : graph_algo/svg/svg.cpp.i
+
+graph_algo/svg/svg.s: graph_algo/svg/svg.cpp.s
+.PHONY : graph_algo/svg/svg.s
+
+# target to generate assembly for a file
+graph_algo/svg/svg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graph.dir/build.make CMakeFiles/graph.dir/graph_algo/svg/svg.cpp.s
+.PHONY : graph_algo/svg/svg.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... graph"
+	@echo "... graph_algo/json/json.o"
+	@echo "... graph_algo/json/json.i"
+	@echo "... graph_algo/json/json.s"
 	@echo "... graph_algo/main.o"
 	@echo "... graph_algo/main.i"
 	@echo "... graph_algo/main.s"
+	@echo "... graph_algo/svg/svg.o"
+	@echo "... graph_algo/svg/svg.i"
+	@echo "... graph_algo/svg/svg.s"
 .PHONY : help
 
 
