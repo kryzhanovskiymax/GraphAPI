@@ -3,6 +3,8 @@
 #include <deque>
 #include <utility>
 #include <memory>
+#include <unordered_map>
+#include <map>
 
 enum class Color {
     White,
@@ -24,8 +26,9 @@ template <typename T>
 struct Graph {
     std::deque<T> vertices = {};
     std::deque<std::pair<T, T>> edges = {};
-    std::function<double(std::pair<T, T>)> weight = [] (const std::pair<T, T>& edge) {
-        return 0;
+    std::map<std::pair<T, T>, double> edge_to_weight;
+    std::function<double(std::pair<T, T>)> weight = [this] (const std::pair<T, T>& edge) {
+        return this->edge_to_weight[edge];
     } ;
 };
 
@@ -36,3 +39,4 @@ struct VertixWrapper {
     Color color = Color::White;
     std::shared_ptr<VertixWrapper<T>> parent = nullptr;
 };
+

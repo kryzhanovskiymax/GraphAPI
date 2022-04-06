@@ -8,6 +8,7 @@ set(SOURCES
 set(HEADERS 
         ./graph_algo/domain.hpp
         ./graph_algo/graph.hpp
+        ./graph_algo/connected_components.hpp
 )
 
 add_executable(graph ${SOURCES} ${HEADERS})
