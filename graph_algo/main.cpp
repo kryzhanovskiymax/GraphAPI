@@ -29,9 +29,29 @@ void ShowGraphRepresentation(std::ostream& os, const Graph<T>& g) {
 
 int main() {
 
+    GraphReader reader;
+    reader.ParseGraphJson(std::cin);
+
+    auto g = reader.GetGraph();
+
+    /*for (const auto& e : g.edges) {
+        std::cout << e.first << " " << e.second << ": " << g.weight(e) << std::endl;
+    }*/
+
+    GraphProcess<std::string> graph(g);
+
+    auto mst = graph.GenerateMST();
+
     GraphPainter painter;
-    painter.SetSize(400, 400, 15);
-    
+    painter.SetGraph(g);
+    painter.SetMST(mst);
+    painter.SetMSTHighlight(true);
+    painter.RenderGraph(std::cout);
+    /*std::cout << "--------" << std::endl;;
+    for (const auto& e : mst.edges) {
+        std::cout << e.first << " " << e.second << std::endl;
+    }*/
+
    /* GraphSetUp<std::string> set_up({"a", "b", "c"}, {{"a", "b"}, {"b", "c"}, {"c", "a"}});
     std::function<double(std::pair<std::string, std::string>)> w = [] (const std::pair<std::string, std::string> edge) {
         if (edge == std::pair<std::string, std::string>({"a", "b"})) {

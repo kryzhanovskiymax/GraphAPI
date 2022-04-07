@@ -12,20 +12,19 @@ namespace graph {
 namespace domain {
 
     struct Size {
-        int height;
-        int width;
-        int padding;
+        int height = 400;
+        int width = 400;
+        int padding = 15;
     };  
 
     struct GraphRepresentationConfig {
         int stroke_width = 2;
-        int vertice_radius = 7;
+        int vertice_radius = 15;
         int mst_line_width = 3;
         std::vector<svg::Color> palette = {svg::Rgb(45, 45, 60)};
-        std::vector<svg::Color> vertice_palette = {svg::Rgb(60, 80, 80)};
-        std::vector<svg::Color> edge_palette = {svg::Rgb(100, 100, 100)};
-        svg::Color mst_color = svg::Rgb(150, 10, 10);
-        svg::Color mst_vertice = svg::Rgb(150, 10, 10);
+        std::vector<svg::Color> vertice_palette = {svg::Rgb(60, 80, 190)};
+        std::vector<svg::Color> edge_palette = {svg::Rgb(200, 100, 100)};
+        svg::Color mst_color = svg::Rgb(10, 150, 10);
     };
 
     struct RepresentationFlags {
@@ -52,7 +51,17 @@ public:
     }
 
     void RenderGraph(std::ostream& os) {
+        auto positions = GeneratePositions(this->graph.vertices.size());
 
+        int i = 0;
+        for (const auto& v : this->graph.vertices) {
+            vertices_to_positions[v] = positions[i];
+            ++i;
+        }
+
+        svg::Document canvas;
+        DrawGraphRepresentation(canvas);
+        canvas.Render(os);
     }
     
     GraphPainter& SetStrokeWidth (int width) {
@@ -145,24 +154,79 @@ private:
     }
 
     void DrawGraphRepresentation(svg::Document& image) {
-        DrawVertices(image);
-        DrawVerticesNames(image);
         DrawGraphEdges(image);
+        DrawVertices(image);
 
         if (representation_flags.highlight_mst) {
             DrawMSTEdges(image);
-            DrawMSTVertices(image);
         }
+
+        DrawVerticesNames(image);
     }
 
     void DrawVertices(svg::Document& image) {
-        
+        for (const auto& [vertice, position] : vertices_to_positions) {
+            svg::Circle vertice_mark;
+            vertice_mark.SetCenter(position);
+            vertice_mark.SetFillColor(representation_config.vertice_palette[0]);
+            vertice_mark.SetStrokeColor(representation_config.vertice_palette[0]);
+            vertice_mark.SetRadius(representation_config.vertice_radius);
+            image.Add(vertice_mark);
+        }
     }
 
-    void DrawVerticesNames(svg::Document& image);
-    void DrawGraphEdges(svg::Document& image);
-    void DrawMSTVertices(svg::Document& image);
-    void DrawMSTEdges(svg::Document& image);
+    void DrawVerticesNames(svg::Document& image) {
+        for (const auto& [vertice, position] : vertices_to_positions) {
+            svg::Text vertice_name;
+            svg::Text underlayer;
+
+            svg::Point offset{-1, -1};
+            vertice_name.SetPosition(position).SetOffset(offset);
+            vertice_name.SetFontSize(10).SetFontFamily("Verdana").SetData(vertice).SetFillColor("balck");
+
+            underlayer.SetPosition(position).SetOffset(offset).SetFontSize(10).SetFontFamily("Verdana").SetData(vertice).SetFillColor("balck");
+            underlayer.SetStrokeColor("white").SetFillColor("white").SetStrokeWidth(12).SetStrokeLineJoin(svg::StrokeLineJoin::ROUND).SetStrokeLineCap(svg::StrokeLineCap::ROUND);
+
+            image.Add(underlayer);
+            image.Add(vertice_name);
+        }
+    }
+
+    void DrawGraphEdges(svg::Document& image) {
+        for (const auto& edge_ : graph.edges) {
+            svg::Polyline edge;
+            svg::Point first_point = vertices_to_positions.at(edge_.first);
+            svg::Point second_point = vertices_to_positions.at(edge_.second);
+
+            edge.AddPoint(first_point);
+            edge.AddPoint(second_point);
+
+            edge.SetFillColor(svg::NoneColor).SetStrokeColor(representation_config.edge_palette[0]);
+            edge.SetStrokeLineCap(svg::StrokeLineCap::ROUND).SetStrokeLineJoin(svg::StrokeLineJoin::ROUND);
+
+            edge.SetStrokeWidth(representation_config.stroke_width);
+
+            image.Add(edge);
+        }
+    }
+
+    void DrawMSTEdges(svg::Document& image) {
+        for (const auto& edge_ : mst.edges) {
+            svg::Polyline edge;
+            svg::Point first_point = vertices_to_positions.at(edge_.first);
+            svg::Point second_point = vertices_to_positions.at(edge_.second);
+
+            edge.AddPoint(first_point);
+            edge.AddPoint(second_point);
+
+            edge.SetFillColor(svg::NoneColor).SetStrokeColor(representation_config.mst_color);
+            edge.SetStrokeLineCap(svg::StrokeLineCap::ROUND).SetStrokeLineJoin(svg::StrokeLineJoin::ROUND);
+
+            edge.SetStrokeWidth(representation_config.mst_line_width);
+
+            image.Add(edge);
+        }
+    }
 };
 
 }
