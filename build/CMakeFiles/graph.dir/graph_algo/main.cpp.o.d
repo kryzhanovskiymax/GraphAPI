@@ -1,5 +1,5 @@
 CMakeFiles/graph.dir/graph_algo/main.cpp.o: \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/main.cpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/main.cpp \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iostream \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__config \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/pthread.h \
@@ -239,18 +239,18 @@ CMakeFiles/graph.dir/graph_algo/main.cpp.o: \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__node_handle \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/optional \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/list \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/graph.hpp \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/domain.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/graph.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/domain.hpp \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/deque \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/map \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__tree \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/connected_components.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/connected_components.hpp \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/unordered_set \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/queue \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/graph_reader.hpp \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/json/json.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/graph_reader.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/json/json.hpp \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/variant \
   /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/array \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/graph_painter.hpp \
-  /Users/makskryzhanovskiy/Desktop/C:C++/GraphAPI/graph_algo/svg/svg.hpp
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/graph_painter.hpp \
+  /Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/graph_algo/svg/svg.hpp
