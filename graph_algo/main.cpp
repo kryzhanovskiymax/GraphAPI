@@ -5,6 +5,7 @@
 
 #include "graph.hpp"
 #include "graph_reader.hpp"
+#include "graph_painter.hpp"
 
 using namespace graph;
 
@@ -28,7 +29,9 @@ void ShowGraphRepresentation(std::ostream& os, const Graph<T>& g) {
 
 int main() {
 
-
+    GraphPainter painter;
+    painter.SetSize(400, 400, 15);
+    
    /* GraphSetUp<std::string> set_up({"a", "b", "c"}, {{"a", "b"}, {"b", "c"}, {"c", "a"}});
     std::function<double(std::pair<std::string, std::string>)> w = [] (const std::pair<std::string, std::string> edge) {
         if (edge == std::pair<std::string, std::string>({"a", "b"})) {

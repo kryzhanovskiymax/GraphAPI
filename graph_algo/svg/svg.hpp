@@ -73,6 +73,10 @@ struct Point {
     double x = 0;
     double y = 0;
 };
+
+bool operator==(const Point& p1, const Point& p2);
+bool operator>(const Point& p1, const Point& p2);
+bool operator<(const Point& p1, const Point& p2);
  
 struct RenderContext {
     RenderContext(std::ostream& out)

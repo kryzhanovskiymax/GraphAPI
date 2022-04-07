@@ -75,6 +75,23 @@ std::ostream& operator<<(std::ostream& os, svg::StrokeLineJoin join) {
     StrokeLineJoinOutput(os, join);
     return os;
 }
+
+bool operator==(const Point& p1, const Point& p2) {
+    return (p1.x == p2.x) && (p1.y == p2.y);
+}
+bool operator>(const Point& p1, const Point& p2) {
+    if (p1.x > p2.x) {
+        return true;
+    } else if (p1.x == p2.x) {
+        return p1.y > p2.y;
+    } else {
+        return false;
+    }
+}
+
+bool operator<(const Point& p1, const Point& p2) {
+    return !(p1 > p2) && !(p1 == p2);
+}
     
 void Object::Render(const RenderContext& context) const {
     context.RenderIndent();
