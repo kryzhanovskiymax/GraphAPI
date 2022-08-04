@@ -1,3 +1,0 @@
-/Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/build/CMakeFiles/graph.dir
-/Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/build/CMakeFiles/edit_cache.dir
-/Users/makskryzhanovskiy/Desktop/C:C++/GraphProject/api/GraphAPI/build/CMakeFiles/rebuild_cache.dir
